@@ -15,7 +15,13 @@ const PORT = process.env.PORT || 5000;
 
 //middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://chat-bot-ebon-two.vercel.app", 
+  ],
+  credentials: true,
+}));
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
