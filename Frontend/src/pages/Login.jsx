@@ -15,7 +15,7 @@ import toast from 'react-hot-toast';
         password:""
     });
     const navigate = useNavigate();
-    const [error, setError] = useState("");
+    const [, setError] = useState("");
     const { login } = useAuth();
     const [loading, setLoading] = useState(false);
     const handleSubmit =  async (e) => {

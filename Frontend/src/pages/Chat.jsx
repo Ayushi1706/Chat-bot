@@ -70,9 +70,10 @@ const Chat = () => {
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    getConversations();
-  }, []);
+
+useEffect(() => {
+  getConversations();
+}, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
