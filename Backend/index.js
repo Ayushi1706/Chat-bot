@@ -16,10 +16,18 @@ const PORT = process.env.PORT || 5000;
 //middleware
 app.use(express.json());
 app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "https://chat-bot-ebon-two.vercel.app", 
-  ],
+  origin: function(origin, callback) {
+    const allowedOrigins = [
+      "http://localhost:3000",
+      "https://chat-bot-ebon-two.vercel.app",
+    ];
+    // Allow all Vercel preview deployments
+    if (!origin || allowedOrigins.includes(origin) || origin.endsWith(".vercel.app")) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
 }));
 app.use(express.urlencoded({ extended: true }));
