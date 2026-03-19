@@ -70,7 +70,7 @@ const Chat = () => {
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
 
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
 useEffect(() => {
   getConversations();
 }, []);

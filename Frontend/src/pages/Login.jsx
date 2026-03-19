@@ -15,7 +15,7 @@ import toast from 'react-hot-toast';
         password:""
     });
     const navigate = useNavigate();
-    const [, setError] = useState("");
+    const [error, setError] = useState(""); // eslint-disable-line no-unused-vars
     const { login } = useAuth();
     const [loading, setLoading] = useState(false);
     const handleSubmit =  async (e) => {
